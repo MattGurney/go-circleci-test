@@ -1,14 +1,17 @@
 package main
 
 import (
-    "testing"
-    "github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestAddition(t *testing.T) {
-    assert.Equal(t, 2, 1+1, "1+1 should equal 2")
+	if 1+1 != 2 {
+		t.Errorf("Expected 2, got %d", 1+1)
+	}
 }
 
 func TestFailure(t *testing.T) {
-    assert.Equal(t, 3, 1+1, "This test should fail")
+	if 1+1 != 3 {
+		t.Errorf("Expected 3, got %d (This test is supposed to fail)", 1+1)
+	}
 }
